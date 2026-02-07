@@ -44,6 +44,12 @@
             time_to_max_speed_ms = <100>;
             acceleration_exponent = <2>;
         };
+
+        ms_normal: mouse_scroll_normal {
+            compatible = "zmk,behavior-mouse-scroll";
+            #binding-cells = <2>;
+            speed = <8>;
+        };
     };
 
     keymap {
