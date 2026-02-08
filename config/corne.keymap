@@ -29,27 +29,6 @@
             acceleration_exponent = <1>;
         };
 
-        mm_normal: mouse_move_normal {
-            compatible = "zmk,behavior-mouse-move";
-            #binding-cells = <2>;
-            speed = <12>;
-            time_to_max_speed_ms = <200>;
-            acceleration_exponent = <1>;
-        };
-
-        mm_fast: mouse_move_fast {
-            compatible = "zmk,behavior-mouse-move";
-            #binding-cells = <2>;
-            speed = <30>;
-            time_to_max_speed_ms = <100>;
-            acceleration_exponent = <2>;
-        };
-
-        ms_normal: mouse_scroll_normal {
-            compatible = "zmk,behavior-mouse-scroll";
-            #binding-cells = <2>;
-            speed = <8>;
-        };
     };
 
     keymap {
@@ -118,9 +97,9 @@
         Mouse {
             bindings = <
 &trans  &trans  &trans  &mkp MB4   &mkp MB5   &trans      &trans  &kp LC(C)       &kp LC(V)       &trans        &trans           &trans
-&trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans      &trans  &mm_normal -1 0  &mm_normal 0 1  &mm_normal 0 -1 &mm_normal 1 0  &trans
-&trans  &trans  &trans  &trans     &trans     &trans      &trans  &ms_normal -1 0  &ms_normal 0 1 &ms_normal 0 -1 &ms_normal 1 0 &trans
-                        &kp LCTRL  &trans   &trans    &trans  &mkp LCLK       &mkp RCLK
+&trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans      &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
+&trans  &trans  &trans  &trans     &trans     &trans      &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
+                        &kp LCTRL  &mm_slow   &mm_fast    &trans  &mkp LCLK       &mkp RCLK
             >;
         };
     };
